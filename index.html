@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farcaster Crypto Frame</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        .crypto-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 20px;
+            cursor: pointer;
+            background-color: #008cba;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .crypto-image {
+            display: none;
+            margin-top: 20px;
+            width: 200px;
+            height: 200px;
+        }
+        .falling-tokens {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .falling-token {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Farcaster Crypto Frame</h1>
+    <button class="crypto-button" onclick="recast()">Find Out Your Crypto</button>
+    <div id="crypto-result"></div>
+    <img id="crypto-image" class="crypto-image" src="" alt="Crypto Image">
+
+    <div class="falling-tokens"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
